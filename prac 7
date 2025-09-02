@@ -1,0 +1,19 @@
+def find_occurrences(text, pattern):
+    indices = []
+    start = 0
+
+    while True:
+        index = text.find(pattern, start)
+        if index == -1:
+            break
+        indices.append(index)
+        start = index + 1  # Continue searching after this index
+
+    return indices if indices else -1
+
+# Example usage
+if __name__ == "__main__":
+    text = input("Enter the main string: ")
+    pattern = input("Enter the substring to search for: ")
+    result = find_occurrences(text, pattern)
+    print("Result:", result)
