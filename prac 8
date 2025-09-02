@@ -1,0 +1,21 @@
+def cubes_with_for_loop(input_list):
+    result = []
+    for item in input_list:
+        if isinstance(item, int) and item % 2 == 0:
+            result.append(item ** 3)
+    return result
+
+def cubes_with_list_comprehension(input_list):
+    return [x ** 3 for x in input_list if isinstance(x, int) and x % 2 == 0]
+
+# Example usage
+if __name__ == "__main__":
+    input_list = [1, 2, 'a', 3.5, 4, 6, '7', 9, 8, 10.0, True]
+
+    print("Original List:", input_list)
+
+    result_a = cubes_with_for_loop(input_list)
+    print("\n(a) Cubes using 'for' loop:", result_a)
+
+    result_b = cubes_with_list_comprehension(input_list)
+    print("(b) Cubes using list comprehension:", result_b)
