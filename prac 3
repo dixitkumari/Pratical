@@ -1,0 +1,29 @@
+def print_pyramid(n):
+    print("Pyramid:")
+    for i in range(n):
+        spaces = ' ' * (n - i - 1)
+        stars = '*' * (2 * i + 1)
+        print(spaces + stars + spaces)
+
+def print_reverse_pyramid(n):
+    print("Reverse Pyramid:")
+    for i in range(n):
+        spaces = ' ' * i
+        stars = '*' * (2 * (n - i) - 1)
+        print(spaces + stars + spaces)
+
+# Main program
+def main():
+    try:
+        n = int(input("Enter the number of rows for the pyramid: "))
+        if n <= 0:
+            print("Please enter a positive integer.")
+            return
+
+        print_pyramid(n)
+        print_reverse_pyramid(n)
+    except ValueError:
+        print("Invalid input. Please enter a valid integer.")
+
+if __name__ == "__main__":
+    main()
