@@ -1,0 +1,35 @@
+def main():
+    # Input string from user
+    string = input("Enter a string: ")
+    char = input("Enter the character to operate on: ")
+
+    if len(char) != 1:
+        print("Please enter exactly one character.")
+        return
+
+    # a. Frequency of character
+    freq = string.count(char)
+    print(f"\n[a] Frequency of '{char}' in the string: {freq}")
+
+    # b. Replace character
+    replacement = input("\n[b] Enter a character to replace it with: ")
+    if len(replacement) != 1:
+        print("Replacement must be exactly one character.")
+        return
+
+    replaced_string = string.replace(char, replacement)
+    print(f"String after replacing '{char}' with '{replacement}': {replaced_string}")
+
+    # c. Remove first occurrence
+    if char in string:
+        first_removed = string.replace(char, '', 1)
+        print(f"\n[c] String after removing first occurrence of '{char}': {first_removed}")
+    else:
+        print(f"\n[c] Character '{char}' not found in the string.")
+
+    # d. Remove all occurrences
+    all_removed = string.replace(char, '')
+    print(f"[d] String after removing all occurrences of '{char}': {all_removed}")
+
+if __name__ == "__main__":
+    main()
