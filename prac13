@@ -1,0 +1,16 @@
+class InvalidNameError(Exception):
+    pass
+
+try:
+    name = input("Enter your name: ")
+
+    # Check if name contains only alphabets and spaces
+    if not name.replace(" ", "").isalpha():
+        raise InvalidNameError("Name should contain only alphabets!")
+
+    print("Valid name entered:", name)
+
+except InvalidNameError as e:
+    print("Error:", e)
+except Exception as e:
+    print("Unexpected error:", e)
